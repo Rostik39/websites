@@ -1,3 +1,6 @@
+/* ----------Fonts------------------------ */
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,regular,500);
+
 /*zeroing*/
 *{
     padding: 0;
@@ -35,4 +38,249 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
-/*--------------------*/
+
+/*---------default-----------*/
+body{
+    font-family: Poppins;
+    font-weight: 300;
+    background-color: #0D0D11;
+    color: #fff;
+}
+.wrapper{
+    overflow: clip;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+[class*="__container"]{
+    max-width: 81.25rem;
+    margin: 0 auto;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+.header{
+    
+}
+.page{
+    flex: 1 1 auto;
+}
+.footer{
+
+}
+/* -----------Modules------------ */
+.title{
+    font-weight: 500;
+    font-size: 3.2rem;
+    color: #fff;
+}
+.text{
+    color: #9C9C9C;
+    font-weight: 300;
+    font-size: 1.125rem;
+}
+.button{
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #fff;
+    background-color: rgb(61, 150, 244);
+    border-radius: 3.125rem;
+    padding: 1rem 1.8125rem;
+    letter-spacing: 0.125rem;
+}
+.button--dark{ 
+    background-color: rgba(129, 129, 139, 0.2);
+}
+
+/* ------------header--------------- */
+
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 7.25rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+.header__logo{
+
+}
+.header__logo img{
+
+}
+.header__content{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.header__menu{
+
+}
+.menu{
+
+}
+.menu__list{
+    display: flex;
+    gap: 2.25rem;
+}
+.menu__item{
+
+}
+.menu__link{
+    font-size: 1rem;
+    display: block;
+}
+.menu__link:hover{
+    text-decoration: underline;
+}
+.header__cart{
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+.cart__antity{
+    border-radius: 29.94px; 
+    background-color: rgba(129, 129, 139, 0.3);
+    padding: 0.3125rem 0.625rem;
+}
+.header__button{
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+.header__button:hover{
+    background-color: rgb(27, 118, 255);
+}
+.header__burger{
+    display: none;
+}
+.header__logo,
+.header__button,
+.header__cart{
+    position: relative;
+    z-index: 2;
+}
+.menu-open .menu__body,
+.menu-open .menu__body::before{
+    left: 0;
+}
+@media (max-width: 61.9988em){
+    .menu__list{
+        flex-wrap: wrap;
+    }
+    .header__container{
+        min-height: 5.625rem;
+    }
+}
+@media (max-width: 47.9988em){
+    .header__burger{
+        display: block;
+        flex: 0 0 1.875rem;
+        height: 1.125rem;
+        position: relative;
+        z-index: 5;
+        background-color: #0D0D11;
+    }
+    .header__burger span,
+    .header__burger::after,
+    .header__burger::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.125rem;
+        right: 0;
+        background-color: #fff;
+    }
+    .header__burger::after{
+        top: 0;
+    }
+    .header__burger::before{
+        bottom: 0;
+    }
+    .header__burger span{
+        top: calc(50% - 1px);
+    } 
+    .menu__body{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background-color: #0D0D11;
+        padding: 6.25rem 0.9375rem 1.875rem 0.9375rem;
+        overflow: auto;
+        transition: left 0.3s ease;
+    }
+    .menu__body::before{
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 4.375rem;
+        top: 0;
+        left: -100%;
+        background-color: #0D0D11;
+        z-index: 2;
+        transition: left 0.3s ease;
+    }
+    .menu__list{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 2.25rem;
+    }
+    .menu__link{
+        font-size: 2rem;
+    }
+    .header__container{
+        min-height: 4.375rem;
+    }
+    .header__content{
+        margin-right: 20px;
+        gap: 10px;
+    }
+    .button{
+        padding: 0.75rem 1.125rem;
+        letter-spacing: 0.0625rem;
+    }
+}   
+@media (max-width: 35em){
+    .header__logo{
+        flex: 0 0 3.125rem;
+        overflow: hidden;
+    }
+}
+
+/* --------------Main------------------- */
+.page__main{
+
+}
+.main{
+    margin-top: 2.75rem;
+}
+.main__container{
+    display: flex;
+    justify-content: space-between;
+}
+.main__content{
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 39rem;
+}
+.main__title:not(:last-child){
+    margin-bottom: 1.75rem;
+}
+.main__title{
+
+}
+.main__text{
+
+}
+.main__buttons{
+
+}
+.main__button{
+
+}
+.main__images{
+
+}
+.main__img{
+
+}
