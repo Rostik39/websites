@@ -1,0 +1,98 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.page {
+    &__main{}
+    &__services {}
+    &__works {}
+    &__career {}
+    &__articles {}
+    &__clients {}
+    &__education {}
+    &__contacts {}
+  }
+//=======================================================================================================================================================
+.title {
+    &__label{
+        font-size: toRem(12);
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: 2;
+        letter-spacing: toEm(7.5, 12);
+        color: $greyColor;
+        display: flex;
+        align-items: center;
+        gap: toRem(16);
+        &::before{
+            content:'';
+            width: toRem(16);   
+            height: toRem(2);
+            background: rgb(217, 217, 217);
+        }
+        &:not(:last-child){
+            margin-bottom: toRem(9);
+        }
+  }
+    &__value{
+        font-family: Plus Jakarta Sans;
+        font-size: toRem(36);
+        font-weight: 700;
+        line-height: 1.25;
+        @include adaptiveValue("font-size", 36, 28);
+        span{
+            color: $purpleColor;
+        }
+        &_big{
+            font-size: toRem(44);
+            line-height: math.div(55 , 44);
+        }
+  }
+}
+//========================================================================================================================================================
+.text{
+    line-height: math.div(32 , 16);
+    p{
+        &:not(:last-child) {margin-bottom: toRem(15);}
+    }
+}
+//========================================================================================================================================================
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    @include adaptiveValue("column-gap", 34, 15);
+    align-items: center;
+    &__link {
+        font-size: toRem(22);
+        transition: all 0.3s;
+        @media (any-hover: hover){
+            &:hover{
+                color: $purpleColor;
+            }
+        }
+    }
+}
+//========================================================================================================================================================
+.category-link{
+    display: inline-block;
+    border: 1px solid #f1f1f1;
+    border-radius: toRem(4);
+    font-size: toRem(12);
+    line-height: math.div(15 , 12);
+    padding: toRem(4) toRem(8);
+    color: $greyColor;
+    transition: all 0.3s;
+    @media (any-hover: hover){
+        &:hover{
+            border: 1px solid $purpleColor;
+            background-color: $purpleColor;
+            color: #fff;
+        }
+    }
+}
+//========================================================================================================================================================
+.tag{
+    display: inline-block;
+    padding: toRem(4) toRem(8);
+    background-color: #FBFBFB;
+    color: $greyColor;
+    border-radius: toRem(4);
+}

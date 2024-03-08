@@ -64,3 +64,16 @@ Notes:
             overflow: auto;
             transition: left 0.3s ease;
         }
+
+
+По шаблону :
+
+    1.  Шрифты (цвет, размер, семья)
+    2.  Размер сетки
+    3.  Формирования иконочного шрифта
+    4.  Разработка повторяющихся блоков
+
+    Notice:
+        -   font-size: toRem(12);
+        -   line-height: 2;
+        -   letter-spacing: toEm(7.5, 12);
