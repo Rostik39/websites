@@ -1,0 +1,68 @@
+.how {
+    position: relative;
+    background: linear-gradient(133.96deg, rgb(224, 147, 160) -45.367%,rgb(236, 221, 206) 118.936%);
+
+    &__sign {
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: toRem(85);
+        padding-top: toRem(148);
+        padding-bottom: toRem(189);
+    }
+
+    &__item {
+        background-color: #ECDDCE;
+        max-width: toRem(1160);
+        padding: toRem(37) toRem(86) toRem(68) toRem(176);
+        position: relative;
+        &::before{
+            content:'';
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: toRem(30);
+            font-weight: 700;
+            line-height: math.div(36,30);
+            width: toRem(167);
+            height: toRem(90);
+            top: toRem(-31);
+            left: toRem(-85);
+            background-color: #000;
+            color: #fff;
+            z-index: 2;
+        }
+        @for $i from 1 to 7 {
+            &:nth-child(#{$i})::before {
+                content: 'step #{$i}';
+            }
+        } 
+        &:not(:last-child) {
+            &::after{
+                content:'';
+                position: absolute;
+                width: toRem(3);
+                height: 150%;
+                top: 0;
+                left: toRem(-1);
+                background-color: #000;
+            }
+        }
+    }
+
+    &__title {
+        font-size: toRem(30);
+        font-weight: 700;
+        line-height: math.div(36 , 30);
+        &:not(:last-child) {
+            margin-bottom: toRem(13);
+        }
+    }
+
+    &__text {
+    }
+}

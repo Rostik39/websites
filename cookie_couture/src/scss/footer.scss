@@ -1,0 +1,131 @@
+//====================================================================================================
+.footer {
+    background-color: #000;
+    color: #fff;
+    &__container {
+        padding-top: toRem(139);
+        padding-bottom: toRem(75);
+        display: flex;
+        flex-direction: column;
+        gap: toRem(70);
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        column-gap: toRem(25);
+        row-gap: toRem(50);
+        @media (max-width:$mobile){
+            grid-template-columns: repeat(2, auto);
+        }
+        @media (max-width: toEm(500)){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__logo {
+        @media (max-width:$mobile){
+             grid-column: span 2; 
+        }
+    }
+
+    &__nav {
+       
+    }
+
+    &__language {
+    }
+
+    &__bottom {
+    }
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(240);
+    @include adaptiveValue("gap", 240, 120, 0, 1338, 767.98);
+    @media (max-width: toEm(500)){
+        grid-column: span 2; 
+        justify-content: space-around;
+        gap: unset;
+
+    }
+    &__list {
+       
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: toRem(16);
+        }
+    }
+
+    &__link {
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.language {
+    @media (max-width: toEm(500)){
+         text-align: center; 
+    }
+    &__item{
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__active {
+        font-weight: 700;
+    }
+}
+.bottom--footer {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(30);
+    @media (max-width: toEm(500)){
+         flex-wrap: wrap; 
+    }
+    &__socials {
+
+    }
+
+    &__title {
+        font-size: toRem(25);
+        font-weight: 700;
+        line-height: math.div(30,25);
+        &:not(:last-child) {
+            margin-bottom: toRem(20);
+        }
+    }
+
+    &__items {
+    }
+
+    &__item {
+        font-size: toRem(25);
+        &:not(:last-child) {
+            margin-right: toRem(14);
+        }
+       
+    }
+
+    &__info {
+        align-self: end;
+        a{
+            @media (any-hover: hover){
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+//====================================================================================================

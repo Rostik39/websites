@@ -1,0 +1,146 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.page {
+    //HOME PAGE
+    &__hero {
+    }
+    &__collection {
+    }
+    &__locations {
+    }
+    &__info {
+    }
+    //ABOUT PAGE
+    &__main {
+    }
+    &__values {
+    }
+    //FRANCHISE PAGE
+    &__how {
+    }
+}
+//========================================================================================================================================================
+.button {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: toRem(11) toRem(46);
+    font-family: Lena;
+    font-size: toRem(20);
+    line-height: math.div(20,20);
+    text-align: center;
+    text-transform: capitalize;
+    transition: all 0.3s;
+    @media (any-hover: hover){
+        &:hover{
+            background-color: #fff;
+        }
+    }
+}
+.sign {
+    position: absolute;
+    width: 50%;
+    text-transform: capitalize;
+    top: toRem(-45);
+    left: 0;
+    z-index: 5;
+    padding: toRem(20) toRem(15) toRem(20) toRem(156);
+    @include adaptiveValue("padding-left", 156, 15);
+    color: rgb(255, 255, 255);
+    background-color: #000;
+    font-family: Lena;
+    font-size: toRem(41);
+    @include adaptiveValue("font-size", 41, 25);
+    span {
+        font-family: Kollektif;
+        font-weight: 700;
+        line-height: math.div(1,41);
+    }
+}
+.title {
+    font-family: Kollektif;
+    font-size: toRem(30);
+    font-weight: 700;
+    line-height: math.div(36,30);
+}
+.text {
+    line-height: math.div(30,18);
+}
+//========================================================================================================================================================
+.main {
+    margin-top: toRem(94);
+    &__top {
+        background: linear-gradient(133.96deg, rgba(224, 147, 160, 0.46) -45.76%,rgb(236, 221, 206) 121.342%);
+    }
+
+    &__bottom {
+    }
+}
+.main--top {
+
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: toRem(12);
+        padding-bottom: toRem(12);
+
+        @include adaptiveValue("gap", 130, 25);
+        text-align: center;
+        @media (max-width:$mobile){
+              flex-wrap: wrap;
+              gap: toRem(0);
+            padding: toRem(50) toRem(30) toRem(12) toRem(30);
+        }
+    }
+
+    &__content {
+    }
+
+    &__label {
+        font-family: Lena;
+        line-height: math.div(20,20);
+        text-transform: uppercase;
+        @include adaptiveValue("font-size", 20, 18);
+        &:not(:last-child) {
+            margin-bottom: toRem(42);
+            @include adaptiveValue("margin-bottom", 42, 20);
+        }
+    }   
+
+    &__title {
+        font-weight: 700;
+        line-height: math.div(60,50);
+        @include adaptiveValue("font-size", 50, 35, 0, 1338, 767.98);
+    }
+
+    &__image {
+        transform: translateY(21.183206%);
+        @media (max-width:$mobile){
+            transform: translateY(15%);
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+}
+.main--bottom {
+   
+    &__container{
+        padding-top: toRem(213);
+        padding-bottom: toRem(164);
+        display: flex;
+        justify-content: center;
+        @include adaptiveValue("padding-top", 213, 65);
+        @include adaptiveValue("padding-bottom", 164, 65);
+    }
+    &__text {
+        text-align: center;
+        max-width: toRem(1129);
+        p{
+            @media (max-width:$mobile){ 
+                &:not(:last-child) {
+                    margin-bottom: toRem(20);
+                }
+            }
+        }
+    }
+}

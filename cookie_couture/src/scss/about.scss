@@ -1,0 +1,57 @@
+
+//========================================================================================================================================================
+.values {
+    position: relative;
+    background: linear-gradient(133.96deg, rgb(224, 147, 160) -45.516%,rgb(236, 221, 206) 119.848%);
+    &__container {
+        @include adaptiveValue("padding-top", 127, 65);
+        @include adaptiveValue("padding-bottom", 135, 65);
+    }
+
+    &__sign {
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(toRem(320), toRem(512)));
+        justify-content: center;
+        column-gap: toRem(217);
+        row-gap: toRem(61);
+        @include adaptiveValue("column-gap", 217, 61, 0, 1338, 850);
+        @media (max-width: toEm(850)){
+            grid-template-columns: 1fr; 
+        }
+    }
+
+    &__item {
+        background-color: #ECDDCE;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: toRem(53) toRem(51) toRem(73);
+        @include adaptiveValue("padding-right", 51, 20, 0, 850, 320);
+        @include adaptiveValue("padding-left", 51, 20, 0, 850, 320);
+        @include adaptiveValue("padding-top", 51, 30, 0, 850, 320);
+        @include adaptiveValue("padding-bottom", 51, 30, 0, 850, 320);
+    }
+
+    &__image {
+        width: toRem(120);
+        height: toRem(120);
+        &:not(:last-child) {
+            margin-bottom: toRem(35);
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: toRem(43);
+        }
+    }
+
+    &__text {
+    }
+}

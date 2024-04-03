@@ -1,0 +1,39 @@
+@font-face {
+	font-family: Avenir;
+	font-display: swap;
+	src: url("../fonts/Avenir Medium.woff2") format("woff2"), url("../fonts/Avenir Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: Kollektif;
+	font-display: swap;
+	src: url("../fonts/Kollektif-Bold.woff2") format("woff2"), url("../fonts/Kollektif-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: Lena;
+	font-display: swap;
+	src: url("../fonts/lena-400.woff2") format("woff2"), url("../fonts/lena-400.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Kollektif;
+	font-display: swap;
+	src: url("../fonts/Kollektif.woff2") format("woff2"), url("../fonts/Kollektif.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "icons";
+	src:  url('fonts/icomoon.eot?q2rwtn');
+	src:  url('fonts/icomoon.eot?q2rwtn#iefix') format('embedded-opentype'),
+	url('fonts/icomoon.ttf?q2rwtn') format('truetype'),
+	url('fonts/icomoon.woff?q2rwtn') format('woff'),
+	url('fonts/icomoon.svg?q2rwtn#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+  }
