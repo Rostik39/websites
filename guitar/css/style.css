@@ -2,7 +2,7 @@
 @font-face {
     font-family: CalSans;
     font-display: swap;
-    src: url(/guitar/src/fonts/CalSans-SemiBold.woff2) format("woff2"), url(/guitar/src/fonts/CalSans-SemiBold.woff) format("woff");
+    src: url(/guitar/fonts/CalSans-SemiBold.woff2) format("woff2"), url(/guitar/fonts/CalSans-SemiBold.woff) format("woff");
     font-weight: 400;
     font-style: normal;
 }
