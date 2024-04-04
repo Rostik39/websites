@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="rootpage">
+				<div class="rootpage__container">
+					<h1 class="rootpage__title">My Portfolio</h1>
+					<div data-prlx-mouse data-prlx-cx="150" data-prlx-cy="150" data-prlx-a="20" class="rootpage__info">
+						Hello there! I'm <span>Rostyk</span>, a dedicated student with a burning passion for <span>Front-end Development</span>. With a keen eye for design and a knack for coding, I specialize in crafting engaging and intuitive user experiences through <span>HTML</span>, <span>JavaScript</span> and <span>CSS</span> <span>(SCSS)</span>.
+					</div>
+					<h2 class="rootpage__subtitle">My Projects</h2>
+					<ul class="rootpage__list">
+						<li class="rootpage__item"><a class="rootpage__link" target="_blank" href="alex/home.html">Alex</a></li>
+						<li class="rootpage__item"><a class="rootpage__link" target="_blank" href="growfy/home.html">Growfy</a></li>
+						<li class="rootpage__item"><a class="rootpage__link" target="_blank" href="guitar/home.html">Guitar</a></li>
+						<li class="rootpage__item"><a class="rootpage__link" target="_blank" href="ecoCabins/home.html">ecoCabins</a></li>
+						<li class="rootpage__item"><a class="rootpage__link" target="_blank" href="lidia/home.html">lidia</a></li>
+					</ul>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
