@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Contact"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+                <section class="page__main main--page">
+                    <div class="main--page__container">
+                        <h3 class="main--page__title"><span>Contact</span> Cookie Couture</h3>
+                        <div class="main--page__text text">Ask for more information using this form. We will get in touch with you.</div>
+                    </div>
+                </section>  
+                <section class="page__form form">
+                    <div class="form__container">
+                        <form action="" class="form__body">
+                            <div class="form__checkbox checkbox">
+                                <label class="form--titel">Topic*</label>
+                                <div class="checkbox__item">
+                                    <input autocomplete="off" type="checkbox" name="Jobs" data-error="Error" placeholder="" class="checkbox__box">
+                                    <label for="checkbox__box">Jobs</label>
+                                </div>
+                                <div class="checkbox__item">
+                                    <input autocomplete="off" type="checkbox" name="Franchise" data-error="Error" placeholder="" class="checkbox__box">
+                                    <label for="checkbox__box">Franchise</label>
+                                </div>
+                                <div class="checkbox__item">
+                                    <input autocomplete="off" type="checkbox" name="Catering" data-error="Error" placeholder="" class="checkbox__box">
+                                    <label for="checkbox__box">Catering</label>
+                                </div>
+                                <div class="checkbox__item">
+                                    <input autocomplete="off" type="checkbox" name="Media & Press" data-error="Error" placeholder="" class="checkbox__box">
+                                    <label for="checkbox__box">Media & Press</label>
+                                </div>
+                                <div class="checkbox__item">
+                                    <input autocomplete="off" type="checkbox" name="Others" data-error="Error" placeholder="" class="checkbox__box">
+                                    <label for="checkbox__box">Others</label>
+                                </div>
+                            </div>
+                            <label class="form--titel">Name*</label>
+                            <input autocomplete="off" type="text" name="name" data-error="Error" placeholder="Your name" class="form__input">
+                            <label class="form--titel">Email*</label>
+                            <input autocomplete="off" type="text" name="email" data-error="Error" placeholder="Your email" class="form__input">
+                            <label class="form--titel">Phone*</label>
+                            <input autocomplete="off" type="text" name="phone" data-error="Error" placeholder="Your phone" class="form__input">
+                            <label class="form--titel">Message*</label>
+                            <textarea cols="30" rows="10" placeholder="Your message" class="form__textarea"></textarea>
+                            <div class="checkbox__agreement">
+                                <input autocomplete="off" type="checkbox" name="" data-error="Error" placeholder="" class="checkbox__box">
+                                <label for="checkbox__box">By providing my data, I agree that cookie couture may contact me and I agree to the terms and conditions and privacy policy.*</label>
+                            </div>
+                            <div class="form__recaptcha">
+                                <img src="@img/reCaptcha.jpg" alt="reCaptcha">
+                            </div>
+                            <button type="submit" class="form__button">Submit</button>
+                        </form>
+                    </div>
+                </section>
+            </main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -1,0 +1,59 @@
+.vacancies {
+    background: linear-gradient(134deg, #e093a0 0%, #ecddce 100%);
+    position: relative;
+    &__container {
+        @include adaptiveValue("padding-top", 144, 80);
+        @include adaptiveValue("padding-bottom", 116, 80);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__sign {
+    }
+
+    &__spollers {
+    }
+
+}
+.spollers {
+    flex: 1 1 ;
+    max-width: toRem(1160);
+    background: #ecddce;
+    @include adaptiveValue("padding-right", 88, 25);
+    @include adaptiveValue("padding-left", 62, 25);
+    @include adaptiveValue("padding-top", 77, 30);
+    @include adaptiveValue("padding-bottom", 88, 30);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(13);
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::before{
+            content:'';
+            position: absolute;
+            width: 100%;
+            height: toRem(2);
+            top: 0;
+            left: 0;
+            background-color: rgb(163, 156, 145);
+        }
+    }
+
+    &__title {
+        font-family: Avenir;
+        @include adaptiveValue("font-size", 25, 20);
+        padding-top: toRem(17);
+        padding-bottom: toRem(8);
+        padding-right: toRem(40);
+        @include adaptiveValue("padding-left", 17, 0);
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue("padding", 20, 0);
+    }
+}

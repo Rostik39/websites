@@ -1,0 +1,109 @@
+.main--page {
+    background: linear-gradient(134deg, #e093a0 0%, #ecddce 100%);
+    margin-top: toRem(94);
+    &__container {
+        @include adaptiveValue("padding-top", 79, 40);
+        @include adaptiveValue("padding-bottom", 51, 30);
+    }
+
+    &__title {
+        font-weight: 300;
+        @include adaptiveValue("font-size", 50, 35);
+        text-align: center;
+        span {
+            font-weight: 700;
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(30);
+        }
+    }
+    &__text {
+        text-align: center;
+    }
+}
+.form {
+
+    &__container {
+        padding-top: toRem(48);
+        padding-bottom: toRem(71);
+    }
+
+    &__body {
+        max-width: toRem(798);
+        margin: 0 auto;
+    }
+
+    &__checkbox {
+    }
+
+    &__input{
+        border: 1px solid #333;
+        padding: toRem(13) toRem(34) toRem(13) toRem(34);
+        margin-bottom: toRem(16);
+    }
+
+    &__textarea {
+        height: toRem(300);
+        border: 1px solid #333;
+        padding: toRem(26) toRem(34) toRem(26) toRem(34);
+        margin-bottom: toRem(38);
+        resize: none;
+    }
+
+    &__recaptcha {
+        &:not(:last-child) {
+            margin-bottom: toRem(33);
+        }
+    }
+
+    &__button {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+        background: #f4d8dd;
+        border-radius: toRem(3);
+        padding: toRem(11) toRem(0);
+        min-width: toRem(232);
+        transition: all 0.3s;
+        @media (any-hover: hover){
+            &:hover{
+                transform: translateY(toRem(-3));
+            }
+        }
+        @media (max-width:$mobile){
+            min-width: 100%;
+        }
+    }
+}
+.checkbox {
+    padding-left: toRem(10);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(11);
+    &:not(:last-child) {
+        margin-bottom: toRem(35);
+    }
+    &__titel {
+    }
+
+    &__item, &__agreement {
+        display: flex;
+        gap: toRem(15);
+    }
+
+    &__box {
+        flex: 0 0 toRem(20);
+        height: toRem(20);
+    }
+
+    &__agreement {
+        padding-left: toRem(10);
+        &:not(:last-child) {
+            margin-bottom: toRem(29);
+        }
+    }
+}
+.form--titel{
+    font-weight: 700;
+    margin-bottom: toRem(16);
+    display: block;
+}
+

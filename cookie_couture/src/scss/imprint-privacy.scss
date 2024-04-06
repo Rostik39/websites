@@ -1,0 +1,37 @@
+//========================================================================================================================================================
+.imprint--privacy {
+
+    &__header {
+        background: linear-gradient(134deg, #e093a0 0%, #ecddce 100%);;
+        margin-top: toRem(94);
+    }
+
+    &__container {
+        @include adaptiveValue("padding-top", 79, 40);
+        @include adaptiveValue("padding-bottom", 79, 40);
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        @include adaptiveValue("font-size", 50, 34);
+    }
+
+    &__body {
+    }
+}
+.body--imprint--privacy {
+
+    &__container {
+        @include adaptiveValue("padding-top", 100, 40);
+        @include adaptiveValue("padding-bottom", 100, 40);
+        p {
+            max-width: toRem(1129);
+            margin: 0 auto;
+            &:not(:last-child) {
+                margin-bottom: toRem(40);
+            }
+        }
+    }
+}
+

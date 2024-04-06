@@ -17,6 +17,19 @@
     //FRANCHISE PAGE
     &__how {
     }
+    &__apply {
+    }
+    //JOBS PAGE
+    &__vacancies {
+    }
+    &__main {
+    }
+    //CONTACT PAGE
+    &__form {
+    }
+    //IMPRINT & PRIVACY PAGE
+    &__imprint {
+    }
 }
 //========================================================================================================================================================
 .button {
@@ -63,6 +76,32 @@
 }
 .text {
     line-height: math.div(30,18);
+    font-size: toRem(18);
+    h6 {
+        font-weight: 700;
+    }
+    p, ul {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 43, 20);
+        }
+    }
+    li {
+        padding-left: toRem(32);
+        position: relative;
+        &::before{
+            content:'';
+            position: absolute;
+            width: toRem(4);
+            height: toRem(4);
+            top: toRem(14);
+            left: toRem(12);
+            border-radius: toRem(10);
+            background-color: #000;
+        }
+    }
+    button{
+        align-self: center;
+    }
 }
 //========================================================================================================================================================
 .main {
@@ -119,7 +158,14 @@
         }
         img{
             max-width: 100%;
+            transition: all 0.5s;
+            @media (any-hover: hover){
+                &:hover{
+                    transform: translate(toRem(5), toRem(-12));
+                }
+            }
         }
+       
     }
 }
 .main--bottom {
@@ -133,7 +179,6 @@
         @include adaptiveValue("padding-bottom", 164, 65);
     }
     &__text {
-        text-align: center;
         max-width: toRem(1129);
         p{
             @media (max-width:$mobile){ 
@@ -141,6 +186,44 @@
                     margin-bottom: toRem(20);
                 }
             }
+        }
+    }
+}
+//========================================================================================================================================================
+.bottom {
+    background-color: #ECDDCE;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: toRem(74);
+        padding-bottom: toRem(99);
+    }
+
+    &__title {
+        font-size: toRem(40);
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: toRem(51);
+        }
+        span{
+            font-weight: 700;
+        }
+    }
+
+    &__text {
+        max-width: toRem(675);
+        text-align: center;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 89, 50);
+        }
+    }
+
+    &__button {
+        @include adaptiveValue("min-width", 592, 280);
+        span{
+            font-family: Kollektif;
+            font-weight: 700;
         }
     }
 }
