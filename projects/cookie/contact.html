@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240406130027">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="img/logo.svg" alt="Logo">
+				</div>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="home.html" class="menu__link">Cookies</a></li>
+							<li class="menu__item"><a data-goto-top="140" data-goto=".locations" href="home.html" class="menu__link">Locations</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link">About</a></li>
+							<li class="menu__item"><a href="jobs.html" class="menu__link">Jobs</a></li>
+							<li class="menu__item"><a href="catering.html" class="menu__link">Catering</a></li>
+							<li class="menu__item"><a href="franchise.html" class="menu__link">Franchise</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__main main--page">
+				<div class="main--page__container">
+					<h3 class="main--page__title"><span>Contact</span> Cookie Couture</h3>
+					<div class="main--page__text text">Ask for more information using this form. We will get in touch with you.</div>
+				</div>
+			</section>
+			<section class="page__form form">
+				<div class="form__container">
+					<form action="" class="form__body">
+						<div class="form__checkbox checkbox">
+							<label class="form--titel">Topic*</label>
+							<div class="checkbox__item">
+								<input autocomplete="off" type="checkbox" name="Jobs" data-error="Error" placeholder="" class="checkbox__box">
+								<label for="checkbox__box">Jobs</label>
+							</div>
+							<div class="checkbox__item">
+								<input autocomplete="off" type="checkbox" name="Franchise" data-error="Error" placeholder="" class="checkbox__box">
+								<label for="checkbox__box">Franchise</label>
+							</div>
+							<div class="checkbox__item">
+								<input autocomplete="off" type="checkbox" name="Catering" data-error="Error" placeholder="" class="checkbox__box">
+								<label for="checkbox__box">Catering</label>
+							</div>
+							<div class="checkbox__item">
+								<input autocomplete="off" type="checkbox" name="Media & Press" data-error="Error" placeholder="" class="checkbox__box">
+								<label for="checkbox__box">Media & Press</label>
+							</div>
+							<div class="checkbox__item">
+								<input autocomplete="off" type="checkbox" name="Others" data-error="Error" placeholder="" class="checkbox__box">
+								<label for="checkbox__box">Others</label>
+							</div>
+						</div>
+						<label class="form--titel">Name*</label>
+						<input autocomplete="off" type="text" name="name" data-error="Error" placeholder="Your name" class="form__input">
+						<label class="form--titel">Email*</label>
+						<input autocomplete="off" type="text" name="email" data-error="Error" placeholder="Your email" class="form__input">
+						<label class="form--titel">Phone*</label>
+						<input autocomplete="off" type="text" name="phone" data-error="Error" placeholder="Your phone" class="form__input">
+						<label class="form--titel">Message*</label>
+						<textarea cols="30" rows="10" placeholder="Your message" class="form__textarea"></textarea>
+						<div class="checkbox__agreement">
+							<input autocomplete="off" type="checkbox" name="" data-error="Error" placeholder="" class="checkbox__box">
+							<label for="checkbox__box">By providing my data, I agree that cookie couture may contact me and I agree to the terms and conditions and privacy policy.*</label>
+						</div>
+						<div class="form__recaptcha">
+							<picture><source srcset="img/reCaptcha.webp" type="image/webp"><img src="img/reCaptcha.jpg" alt="reCaptcha"></picture>
+						</div>
+						<button type="submit" class="form__button">Submit</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<a href="#" class="footer__logo">
+						<img src="img/footer/logo.svg" alt="Logo">
+					</a>
+					<div class="footer__nav nav">
+						<ul class="nav__list">
+							<li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+							<li class="nav__item"><a href="" class="nav__link">Press</a></li>
+							<li class="nav__item"><a href="" class="nav__link">Jobs</a></li>
+							<li class="nav__item"><a href="" class="nav__link">Franchise</a></li>
+						</ul>
+						<ul class="nav__list">
+							<li class="nav__item"><a href="" class="nav__link">About Us</a></li>
+							<li class="nav__item"><a href="" class="nav__link">Cookie Menu</a></li>
+							<li class="nav__item"><a href="" class="nav__link">Locations</a></li>
+							<li class="nav__item"><a href="" class="nav__link">Catering</a></li>
+						</ul>
+					</div>
+					<div class="footer__language language"><a href="#" class="language__item">DE</a> | <a href="#" class="language__item language__active">ENG</a></div>
+				</div>
+				<div class="footer__bottom bottom--footer">
+					<div class="bottom--footer__socials">
+						<div class="bottom--footer__title">Follow us</div>
+						<div class="bottom--footer__items">
+							<a href="" class="bottom--footer__item _icon-instagram"></a>
+							<a href="" class="bottom--footer__item _icon-tiktok"></a>
+							<a href="" class="bottom--footer__item _icon-in"></a>
+						</div>
+					</div>
+					<div class="bottom--footer__info">
+						<a href="imprint.html">Impressum</a> | <a href="privacy.html">Datenschutz</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240406130027"></script>
+</body>
+
+</html>
