@@ -28,13 +28,13 @@ import { ftp } from "./config/gulp-tasks/ftp.js";
 import { zip } from "./config/gulp-tasks/zip.js";
 import { sprite } from "./config/gulp-tasks/sprite.js";
 import { gitignore } from "./config/gulp-tasks/gitignore.js";
-import { otfToTtf, ttfToWoff, fonstStyle } from "./config/gulp-tasks/fonts.js";
+import { otfToTtf, ttfToWoff2, woff2Copy, fontsStyle } from "./config/gulp-tasks/fonts.js";
 
 // Послідовна обробка шрифтів
-const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fonstStyle);
-// Основні завдання виконуватимемо паралельно після обробки шрифтів
-const devTasks = gulp.parallel(fonts, gitignore);
-// Основні завдання виконуватимемо паралельно після обробки шрифтів
+const fonts = gulp.series(reset, otfToTtf, ttfToWoff2, woff2Copy, fontsStyle);
+// Порядок виконання завдань для режиму розробник
+const devTasks = gulp.series(fonts, gitignore);
+// Порядок виконання завдань для режиму продакшн
 const buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, images, gitignore));
 
 // Експорт завдань
