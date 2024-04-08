@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="portfolio_src/css/style.min.css?_v=20240408152300">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+			</div>
+		</header>
+		<main data-fp class="page">
+			<aside class="page__menu menu">
+				<!-- <button type="button" class="menu__icon icon-menu"><span></span></button> -->
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item"><a data-goto=".me" href="" class="menu__link">me</a></li>
+						<li class="menu__item"><a data-goto=".skills" href="" class="menu__link">skills</a></li>
+						<li class="menu__item"><a data-goto=".projects" href="" class="menu__link">projects</a></li>
+						<li class="menu__item"><a data-goto=".hero" href="" class="menu__link">main</a></li>
+						<li class="menu__item"><a data-goto=".contact" href="" class="menu__link">contact</a></li>
+					</ul>
+				</nav>
+			</aside>
+			<section data-fp-section data-watch="navigator" class="page__hero hero">
+				<div class="hero__container">
+					<div class="hero__title">I Am Front End Developer</div>
+					<div class="hero__label">But <span>why</span>?</div>
+				</div>
+			</section>
+			<section data-fp-section="" data-watch="navigator" class="page__me me">
+				<div class="me__container">
+					<div class="me__text">
+						<p>Hello there! My name is Rostyk.</p>
+						<p>a dedicated student with a burning passion for Front-end Development. With a keen eye for design and a knack for coding.</p>
+						<p>My expertise lies in transforming design mockups from Figma into high-quality, interactive web pages that not only look stunning but also function flawlessly across devices and browsers.</p>
+					</div>
+				</div>
+			</section>
+			<section data-fp-section data-watch="navigator" class="page__skills skills">
+				<div class="skills__container"></div>
+			</section>
+			<section data-fp-section data-watch="navigator" class="page__projects projects">
+				<div class="projects__container">
+					<ul class="projects__list">
+						<li class="projects__item"><a class="projects__link" target="_blank" href="projects/alex/home.html">Alex</a></li>
+						<li class="projects__item"><a class="projects__link" target="_blank" href="projects/cookie/home.html">Cookie</a></li>
+						<li class="projects__item"><a class="projects__link" target="_blank" href="projects/lidia/home.html">Lidia</a></li>
+						<li class="projects__item"><a class="projects__link" target="_blank" href="projects/growfy/home.html">Growfy</a></li>
+						<li class="projects__item"><a class="projects__link" target="_blank" href="projects/guitar/home.html">Guitar</a></li>
+						<li class="projects__item"><a class="projects__link" target="_blank" href="projects/ecoCabins/home.html">EcoCabins</a></li>
+					</ul>
+				</div>
+			</section>
+			<section data-fp-section data-watch="navigator" class="page__contact contact">
+				<div class="contact__container">
+					<form class="contact__form" action="files/sendmail/sendmail.php" method="POST">
+						<input type="text" name="form[name]" data-error="Error" placeholder="Name" class="contact__input">
+						<input type="text" name="form[email]" data-error="Error" placeholder="E-mail" class="contact__input">
+						<textarea name="form[message]" data-error="Error" placeholder="Message" class="contact__input"></textarea>
+						<button type="submit" class="contact__button">Send</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+	</div>
+	<script src="portfolio_src/js/app.min.js?_v=20240408152300"></script>
+</body>
+
+</html>

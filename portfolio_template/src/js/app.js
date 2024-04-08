@@ -100,7 +100,7 @@ flsFunctions.isWebp();
 Модуль паралаксу мишею
 Документація: https://template.fls.guru/template-docs/modul-animacii-parallaks-obektov-pri-dvizhenii-myshi.html
 */
-import './libs/parallax-mouse.js'
+// import './libs/parallax-mouse.js'
 
 // ========================================================================================================================================================================================================================================================
 // Робота з формами ========================================================================================================================================================================================================================================================
@@ -190,12 +190,12 @@ flsForms.formFieldsInit({
 // Спостерігач за об'єктами з атрибутом data-watch
 // Документація: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 // Сніппет(HTML):
-// import './libs/watcher.js'
+import './libs/watcher.js'
 
 // Модуль поекранної прокрутки
 // Документація: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html
 // Сніппет(HTML):
-// import './libs/fullpage.js'
+import './libs/fullpage.js'
 
 // Модуль паралаксу
 // Документація: https://template.fls.guru/template-docs/paralaks-pri-skroli.html
@@ -207,7 +207,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавна навігація по сторінці
 // Документація: https://template.fls.guru/template-docs/modul-plavnoj-navigacii-po-stranice.html
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функціонал додавання класів до хедеру під час прокручування
 // Документація: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html

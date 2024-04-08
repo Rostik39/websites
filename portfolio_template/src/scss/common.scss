@@ -1,1 +1,16 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.page {
+
+    &__menu {
+    }
+    &__hero {
+    }
+    &__me {
+    }
+    &__projects {
+    }
+}
+._navigator-active {
+    background-color: $greenDark;
+    color: #000;
+}
