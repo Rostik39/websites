@@ -14,15 +14,13 @@
 		display: block;
 	}
 }
-._icon-email:before {
-	content: "\e900";
+._icon-code:before {
+	content: "\e902";
 	color: #fff;
+  }
+  ._icon-email:before {
+	content: "\e900";
   }
   ._icon-github:before {
 	content: "\e901";
-	color: #fff;
-  }
-  ._icon-html:before {
-	content: "\e902";
-	color: #fff;
   }

@@ -1,15 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Jura:700,regular);
 @font-face {
-  font-family: icomoon;
+  font-family: JetBrainsMono;
   font-display: swap;
-  src: url(../fonts/icomoon.woff2) format("woff2");
+  src: url(../fonts/JetBrainsMono-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal
 }
 @font-face {
-  font-family: JetBrainsMono;
+  font-family: icomoon;
   font-display: swap;
-  src: url(../fonts/JetBrainsMono-Regular.woff2) format("woff2");
+  src: url(../fonts/icomoon.woff2) format("woff2");
   font-weight: 400;
   font-style: normal
 }
@@ -26,17 +26,15 @@
 [class*=_icon-]:before {
   display: block
 }
-._icon-email:before {
-  content: "\e900";
-  color: #fff
-}
-._icon-github:before {
-  content: "\e901";
-  color: #fff
-}
-._icon-html:before {
+._icon-code:before {
   content: "\e902";
   color: #fff
+}
+._icon-email:before {
+  content: "\e900"
+}
+._icon-github:before {
+  content: "\e901"
 }
 * {
   padding: 0;
@@ -239,6 +237,9 @@ body {
   background-color: #00ffa3;
   color: #000
 }
+._navigator-active._icon-code:before {
+  color: #000
+}
 .page {
   position: relative
 }
@@ -345,15 +346,15 @@ body {
   min-height: 100%;
   transition: all .5s
 }
+.menu__link._icon-code:before {
+  transition: all .5s;
+  font-size: 3.75rem
+}
 .hero__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-left: 9.375rem;
   gap: 3.875rem
 }
 .hero__title {
+  font-family: JetBrainsMono;
   font-weight: 400;
   font-size: 5.9375rem;
   line-height: 147%;
@@ -404,12 +405,17 @@ body {
   left: -1.6875rem;
   z-index: 2
 }
+.projects__link {
+  font-size: 3.4375rem;
+  transition: all .3s
+}
 .contact__form {
   min-width: 24.5625rem;
   display: flex;
   flex-direction: column;
   gap: .25rem;
-  position: relative
+  position: relative;
+  margin-bottom: 1.25rem
 }
 .contact__input {
   font-size: 1.125rem;
@@ -434,6 +440,16 @@ body {
   background-color: #c1f8e4;
   color: #000;
   border: .1875rem solid #00ffa3
+}
+.socials {
+  display: flex
+}
+.socials__item {
+  padding: .8125rem 2rem;
+  border: .0625rem solid #00ffa3
+}
+.socials__link {
+  transition: all .3s
 }
 @media (min-width:61.99875em) {
   [class*=__container] {
@@ -484,12 +500,14 @@ body {
     background-color: #8bffd5;
     color: #000
   }
-  .projects__link {
-    transition: all .3s;
-    font-size: 3.4375rem
+  .menu__link:hover._icon-code:before {
+    color: #000
   }
   .projects__link:hover {
     text-decoration: underline;
     scale: 1.07
+  }
+  .socials__link:hover {
+    scale: 1.1
   }
 }

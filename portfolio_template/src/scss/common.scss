@@ -13,4 +13,7 @@
 ._navigator-active {
     background-color: $greenDark;
     color: #000;
+    &._icon-code:before {
+        color: #000;
+    }
 }

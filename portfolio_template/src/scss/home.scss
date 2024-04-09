@@ -112,7 +112,14 @@
             &:hover{
                 background-color: $greenLight;
                 color: #000;
+                &._icon-code:before {
+                    color: #000;
+                }
             }
+        }
+        &._icon-code:before {
+            transition: all 0.5s;
+            font-size: toRem(60);
         }
     }
 }
@@ -120,15 +127,11 @@
 //====================================================================================================
 .hero {
     &__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-left: toRem(150);
         gap: toRem(62);
     }
 
     &__title {
+        font-family: JetBrainsMono;
         font-weight: 400;
         font-size: toRem(95);
         line-height: 147%;
@@ -199,13 +202,13 @@
     }
 
     &__link {
+        font-size: toRem(55);
+        transition: all 0.3s;
         @media (any-hover: hover){
-            transition: all 0.3s;
             &:hover{
                 text-decoration: underline;
                 scale: 1.07;
             }
-            font-size: toRem(55);
         }
     }
 }
@@ -221,6 +224,7 @@
         flex-direction: column;
         gap: toRem(4);
         position: relative;
+        margin-bottom: toRem(20);
     }
 
     &__input {
@@ -248,5 +252,24 @@
         background-color: #c1f8e4;
         color: #000;
         border: toRem(3) solid $greenDark;
+    }
+
+    &__socials {
+    }
+}
+.socials {
+    display: flex;
+    &__item {
+        padding: toRem(13) toRem(32);
+        border: toRem(1) solid $greenDark;
+    }
+
+    &__link {
+        transition: all 0.3s;
+        @media (any-hover: hover){
+            &:hover{
+                scale: 1.1;
+            }
+        }
     }
 }

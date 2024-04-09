@@ -36,7 +36,7 @@
 		"eslint-plugin-react-refresh": "latest",
 		"file-include-webpack-plugin-replace": "latest",
 		"file-loader": "^6.2.0",
-		"gulp": "latest",
+		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "latest",
 		"gulp-clean-css": "latest",
 		"gulp-fonter-fix": "latest",
