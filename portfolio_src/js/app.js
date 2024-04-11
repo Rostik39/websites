@@ -893,6 +893,14 @@
                 const targetElement = e.target.closest(`.${this.options.activeClass}`);
                 this.checkScroll(yCoord, targetElement);
                 if (this.goScroll) this.choiceOfDirection(yCoord);
+                if (window.innerWidth > 991.98) {
+                    let activeSection = document.querySelector(".active-section");
+                    if (activeSection) {
+                        const menuBody = document.querySelector(".menu__body");
+                        menuBody.className = "menu__body";
+                        if (activeSection.classList.contains("hero")) menuBody.classList.add("toBottom"); else if (activeSection.classList.contains("me")) if (yCoord > 0) menuBody.classList.add("fromBottomtoCenter"); else menuBody.classList.add("fromToptoCenter"); else if (activeSection.classList.contains("skills")) menuBody.classList.add("toTop"); else if (activeSection.classList.contains("projects")) if (yCoord > 0) menuBody.classList.add("fromToptoCenter"); else menuBody.classList.add("fromBottomtoCenter"); else if (activeSection.classList.contains("contact")) menuBody.classList.add("toBottom");
+                    }
+                }
             }
             choiceOfDirection(direction) {
                 if (direction > 0 && this.nextSection !== false) this.activeSectionId = this.activeSectionId + 1 < this.sections.length ? ++this.activeSectionId : this.activeSectionId; else if (direction < 0 && this.previousSection !== false) this.activeSectionId = this.activeSectionId - 1 >= 0 ? --this.activeSectionId : this.activeSectionId;
@@ -1017,16 +1025,51 @@
         }), 0);
         var TagCloud = __webpack_require__(124);
         const container = ".skills__container";
-        const texts = [ "HTML", "CSS", "SCSS", "JavaScript", "figma", "animations", "npm", "responsive" ];
+        const texts = [ "HTML", "CSS", "SCSS", "JavaScript", "Figma", "Animations", "npm", "Responsive" ];
         const options = {
             containerClass: "tag-cloud",
             itemClass: "tag",
-            radius: 250,
+            radius: 200,
             direction: 225,
-            initSpeed: "fast",
+            initSpeed: "normal",
             maxSpeed: "normal"
         };
-        TagCloud(container, texts, options);
+        let tagCloud = TagCloud(container, texts, options);
+        let showTagCloud = false;
+        function handleResize() {
+            if (window.innerWidth < 991.98 && showTagCloud == false) {
+                tagCloud.destroy();
+                populateSkillsList();
+                showTagCloud = true;
+            } else if (window.innerWidth >= 991.98 && showTagCloud == true) {
+                clearSkillsContainer();
+                tagCloud = TagCloud(container, texts, options);
+                showTagCloud = false;
+            }
+            let navigationItem = document.querySelector('.menu__link[data-goto=".me"]');
+            if (navigationItem.classList.contains("_navigator-active")) {
+                let animationItem = document.querySelector(".menu__body");
+                animationItem.classList.add("animateUp");
+            }
+        }
+        function populateSkillsList() {
+            const container = document.querySelector(".skills__container");
+            const ul = document.createElement("ul");
+            ul.classList.add("skills__list");
+            texts.forEach((text => {
+                const li = document.createElement("li");
+                li.classList.add("skills__item");
+                li.textContent = text;
+                ul.appendChild(li);
+            }));
+            container.appendChild(ul);
+        }
+        function clearSkillsContainer() {
+            const container = document.querySelector(".skills__container");
+            while (container.firstChild) container.removeChild(container.firstChild);
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize();
         window["FLS"] = true;
         isWebp();
         pageNavigation();

@@ -126,7 +126,7 @@ body {
 				padding: 0 toRem(math.div($containerPadding, 2));
 			}
 		}
-		@media (min-width:$tablet){
+		@media (min-width:$mobile){
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -138,10 +138,10 @@ body {
 			padding: 0 toRem(math.div($containerPadding, 2));
 		}
 		@media (max-width: $pc) {
-			max-width: toRem(970);
+			// max-width: toRem(970);
 		}
 		@media (max-width: $tablet) {
-			max-width: toRem(750);
+			// max-width: toRem(750);
 		}
 		@media (max-width: $mobile) {
 			max-width: none;

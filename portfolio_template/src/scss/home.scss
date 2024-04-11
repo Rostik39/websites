@@ -19,7 +19,7 @@
     height: 100%;
     top: 0;
     right: 0;
-    z-index: 50;
+    z-index: 500;
 
     &__body {
         min-height: 100%;
@@ -28,6 +28,8 @@
         justify-content: center;
         position: relative;
         border-left: toRem(1) solid rgba(255, 255, 255, 0.2);
+        padding-left: toRem(30);
+        padding-right: toRem(30);
         &::before{
             content:'';
             position: absolute;
@@ -39,12 +41,78 @@
             background: rgb(139,255,213);
             background: radial-gradient(circle, rgba(139,255,213,0.15312062324929976) 0%, rgba(0,0,0,1) 41%);
         }
+        @media (min-width:$tablet){
+            &::after{
+                content:'';
+                position: absolute;
+                width: toRem(65);
+                height: toRem(65);
+                bottom: -4%;
+                left: toRem(-32.5);
+                border-radius: 100%;
+                background-color: $greenLight;
+            }
+        }
     }
-
+    @media (min-width:$tablet){
+        &__body.toTop{
+            &::after{
+                animation: toTop 0.8s forwards; 
+            }
+        }
+        &__body.fromBottomtoCenter{
+            &::after{
+                animation: fromBottomtoCenter 0.8s forwards;  
+            }
+        }
+        &__body.fromToptoCenter{
+            &::after{
+                animation: fromToptoCenter 0.8s forwards;  
+            }
+        }
+        &__body.toBottom{
+            &::after{
+                animation: toBottom 0.8s forwards; 
+            }
+        }
+        
+        @keyframes fromBottomtoCenter {
+            0%{
+                bottom: -5%;
+            }
+            100%{
+                bottom: 45%;
+            }
+        }
+        @keyframes fromToptoCenter {
+            0%{
+                bottom: 97%;
+            }
+            100%{
+                bottom: 45%;
+            }
+        }
+        @keyframes toTop {
+            0%{
+                bottom: 45%;
+            }
+            100%{
+                bottom: 95%;
+            }
+        }
+        @keyframes toBottom {
+            0% {
+                bottom: 45%;
+            }
+            100%{
+                bottom: -5%;
+            }
+        } 
+    }
     &__list {
         display: grid;
-        grid-template-columns: repeat(3, toRem(math.div(377,3)));
-        grid-template-rows: repeat(3, toRem(math.div(377,3)));
+        grid-template-columns: repeat(3, minmax(toRem(70) , toRem(math.div(377,3))));
+        grid-template-rows: repeat(3, auto);
 
     }
 
@@ -52,6 +120,8 @@
         text-align: center;
         border: toRem(1) solid rgba(255, 255, 255, 0.2);
         position: relative;
+        min-height: toRem(127);
+        @include adaptiveValue("min-height", 127, 70);
         &:nth-child(2){
             grid-column: span 2;
             &::after{
@@ -137,6 +207,7 @@
         line-height: 147%;
         align-self: center;
         position: relative;
+        @include adaptiveValue("font-size", 95, 35);
     }
 
     &__label {
@@ -156,14 +227,42 @@
     }
 
     &__text {
-        padding: toRem(0) toRem(93);
+        @include adaptiveValue("padding-left", 93, 10, 0, 1230, 767.8);
+        @include adaptiveValue("padding-right", 93, 10, 0, 1230, 767.8);
+        @include adaptiveValue("font-size", 32, 24, 0, 1170, 767.8);
         p {
             &:not(:last-child) {
-                margin-bottom: toRem(50);
+                @include adaptiveValue("margin-bottom", 40, 15, 0, 1230, 767.8);
             }
         }
     }
 }
+//========================================================================================================================================================
+.skills {
+    &__container {
+    }
+
+    &__item {
+        position: relative;
+        padding-left: toRem(20);
+        line-height: 141%;
+        &:not(:last-child) {
+            margin-bottom: toRem(8);
+        }
+        &::before{
+            content:'';
+            position: absolute;
+            width: toRem(6);
+            height: toRem(6);
+            top: toRem(22);
+            left: 0;
+            background-color: #c1f8e4;
+            border-radius: 100%;
+        }
+    }
+}
+
+
 //========================================================================================================================================================
 .projects {
 
@@ -203,6 +302,7 @@
 
     &__link {
         font-size: toRem(55);
+        @include adaptiveValue("font-size", 55, 30);
         transition: all 0.3s;
         @media (any-hover: hover){
             &:hover{
@@ -219,7 +319,8 @@
     }
 
     &__form {
-        min-width: toRem(393);
+        min-width: percent(393,720);
+        @include adaptiveValue("min-width", 393, 300, 0, 1170, 767.8);
         display: flex;
         flex-direction: column;
         gap: toRem(4);
@@ -230,6 +331,8 @@
     &__input {
         font-size: toRem(18);
         padding: toRem(20);
+        border: toRem(3) solid $greenDark;
+
         &:first-child{
             border-radius: toRem(50) toRem(50) 0 0;
         }
@@ -237,9 +340,7 @@
             border-radius: 0 0 toRem(50) toRem(50);
             min-height: toRem(230);
             resize: unset;
-
         }
-        border: toRem(3) solid $greenDark;
     }
     
     &__button {

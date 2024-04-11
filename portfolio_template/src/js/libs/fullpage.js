@@ -530,6 +530,40 @@ export class FullPage {
 		this.checkScroll(yCoord, targetElement);
 		// Перехід
 		if (this.goScroll) this.choiceOfDirection(yCoord);
+
+		if (window.innerWidth > 991.98) {
+
+			// trigger animation 
+			let activeSection = document.querySelector(".active-section");
+			if (activeSection){
+				const menuBody = document.querySelector('.menu__body');
+				menuBody.className = 'menu__body';
+				// Check if the target element has class 'hero'
+				if (activeSection.classList.contains('hero')) {
+					menuBody.classList.add('toBottom');
+				} 
+				else if (activeSection.classList.contains('me')) {
+					if (yCoord > 0) {
+						menuBody.classList.add('fromBottomtoCenter');
+					} else {
+						menuBody.classList.add('fromToptoCenter');
+					}
+				}
+				else if (activeSection.classList.contains('skills')) {
+					menuBody.classList.add('toTop');
+				}
+				else if (activeSection.classList.contains('projects')) {
+					if (yCoord > 0) {
+						menuBody.classList.add('fromToptoCenter');
+					} else {
+						menuBody.classList.add('fromBottomtoCenter');
+					}
+				}
+				else if (activeSection.classList.contains('contact')) {
+					menuBody.classList.add('toBottom');
+				}
+			}
+		}
 	}
 	//===============================
 	// Функція вибору напряму
