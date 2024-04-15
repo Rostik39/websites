@@ -126,15 +126,15 @@ body {
 				padding: 0 toRem(math.div($containerPadding, 2));
 			}
 		}
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 100%;
+		max-width: none;
 		@media (min-width:$mobile){
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			
 			margin: unset;
 			max-width: 50%;
-			min-height: 100%;
 			padding: 0 toRem(math.div($containerPadding, 2));
 		}
 		@media (max-width: $pc) {
@@ -144,9 +144,8 @@ body {
 			// max-width: toRem(750);
 		}
 		@media (max-width: $mobile) {
-			max-width: none;
 			@if ($containerPadding>0 and $maxWidthContainer>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
+				padding: toRem(80) toRem(math.div($containerPadding, 2));
 			}
 		}
 	}

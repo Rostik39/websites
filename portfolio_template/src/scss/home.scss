@@ -10,36 +10,54 @@
         border-radius: 100%;
         background: rgb(139,255,213);
         background: radial-gradient(circle, rgba(139,255,213,0.15312062324929976) 0%, rgba(0,0,0,1) 41%);
+
+        @media (max-width:$mobile){
+             width: 100%; 
+        }
     }
 }
 //====================================================================================================
 .menu {
     position: fixed;
-    width: 50%;
-    height: 100%;
     top: 0;
-    right: 0;
     z-index: 500;
+    width: 100%;
+    height: toRem(50);
+    @media (max-width:$mobile){
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        left: 0; 
+        padding: toRem(0) toRem(15);
+    }
+    @media (min-width:$mobile){
+        width: 50%;
+        height: 100%;
+        right: 0;
+    }
 
     &__body {
         min-height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        border-left: toRem(1) solid rgba(255, 255, 255, 0.2);
-        padding-left: toRem(30);
-        padding-right: toRem(30);
-        &::before{
-            content:'';
-            position: absolute;
-            width: 49.795918%; /* 366/735 */
-            height: 49.795918%; /* 366/735 */
-            top: 0;
-            right: 0;
-            border-radius: 100%;
-            background: rgb(139,255,213);
-            background: radial-gradient(circle, rgba(139,255,213,0.15312062324929976) 0%, rgba(0,0,0,1) 41%);
+        
+        @media (min-width:$mobile){
+            position: relative;
+            padding-left: toRem(30);
+            padding-right: toRem(30);
+            border-left: toRem(1) solid rgba(255, 255, 255, 0.2);
+            &::before{
+                content:'';
+                position: absolute;
+                width: 49.795918%; /* 366/735 */
+                height: 49.795918%; /* 366/735 */
+                top: 0;
+                right: 0;
+                border-radius: 100%;
+                background: rgb(139,255,213);
+                background: radial-gradient(circle, rgba(139,255,213,0.15312062324929976) 0%, rgba(0,0,0,1) 41%);
+            }
         }
         @media (min-width:$tablet){
             &::after{
@@ -110,60 +128,75 @@
         } 
     }
     &__list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(toRem(70) , toRem(math.div(377,3))));
-        grid-template-rows: repeat(3, auto);
+        @media (max-width:$mobile){
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            gap: toRem(15);
+        }
+        @media (min-width:$mobile){
+            display: grid;
+            grid-template-columns: repeat(3, minmax(toRem(70) , toRem(math.div(377,3))));
+            grid-template-rows: repeat(3, auto);
+        }
 
     }
 
     &__item {
         text-align: center;
-        border: toRem(1) solid rgba(255, 255, 255, 0.2);
         position: relative;
-        min-height: toRem(127);
-        @include adaptiveValue("min-height", 127, 70);
-        &:nth-child(2){
-            grid-column: span 2;
-            &::after{
-                content:'';
-                position: absolute;
-                width: toRem(10);
-                height: toRem(10);
-                bottom: toRem(-5);
-                left: 48%;
-                border-radius: 100%;
-                background-color: #d9d9d9;
+        @include adaptiveValue("min-height", 127, 100, 0, 1170, 767.98);
+        @media (max-width:$mobile){
+            min-height: unset;
+            &:nth-child(4){
+                order: -1;
             }
         }
-        &:nth-child(3){
-            grid-column: span 3;
-            &::before,&::after{
-                content:'';
-                position: absolute;
-                width: toRem(10);
-                height: toRem(10);
-                bottom: toRem(-5);
-                left: 32%;
-                border-radius: 100%;
-                background-color: #d9d9d9;
+        @media (min-width:$mobile){  
+            border: toRem(1) solid rgba(255, 255, 255, 0.2);
+            &:nth-child(2){
+                grid-column: span 2;
+                &::after{
+                    content:'';
+                    position: absolute;
+                    width: toRem(10);
+                    height: toRem(10);
+                    bottom: toRem(-5);
+                    left: 48%;
+                    border-radius: 100%;
+                    background-color: #d9d9d9;
+                }
             }
-            &::before{
-                content:'';
-                bottom: unset;
-                top: toRem(-5);
+            &:nth-child(3){
+                grid-column: span 3;
+                &::before,&::after{
+                    content:'';
+                    position: absolute;
+                    width: toRem(10);
+                    height: toRem(10);
+                    bottom: toRem(-5);
+                    left: 32%;
+                    border-radius: 100%;
+                    background-color: #d9d9d9;
+                }
+                &::before{
+                    content:'';
+                    bottom: unset;
+                    top: toRem(-5);
+                }
             }
-        }
-        &:nth-child(5){
-            grid-column: span 2;
-            &::after{
-                content:'';
-                position: absolute;
-                width: toRem(10);
-                height: toRem(10);
-                top: toRem(-5);
-                left: 48%;
-                border-radius: 100%;
-                background-color: #d9d9d9;
+            &:nth-child(5){
+                grid-column: span 2;
+                &::after{
+                    content:'';
+                    position: absolute;
+                    width: toRem(10);
+                    height: toRem(10);
+                    top: toRem(-5);
+                    left: 48%;
+                    border-radius: 100%;
+                    background-color: #d9d9d9;
+                }
             }
         }
 
@@ -178,6 +211,7 @@
         justify-content: center;
         min-height: 100%;
         transition: all 0.5s;
+        // @include adaptiveValue("font-size", 40, 20, 1, 767.98, 320);
         @media (any-hover: hover){
             &:hover{
                 background-color: $greenLight;
@@ -190,6 +224,9 @@
         &._icon-code:before {
             transition: all 0.5s;
             font-size: toRem(60);
+            @media (max-width:$mobile){
+                 font-size: toRem(50); 
+            }
         }
     }
 }
@@ -197,17 +234,17 @@
 //====================================================================================================
 .hero {
     &__container {
-        gap: toRem(62);
+        @include adaptiveValue("gap", 62, 30);
     }
 
     &__title {
         font-family: JetBrainsMono;
         font-weight: 400;
-        font-size: toRem(95);
         line-height: 147%;
         align-self: center;
         position: relative;
-        @include adaptiveValue("font-size", 95, 35);
+        @include adaptiveValue("font-size", 95, 35, 1, 1170, 767.98);
+        @include adaptiveValue("font-size", 60, 55, 0, 767.98, 320);
     }
 
     &__label {
@@ -271,6 +308,7 @@
 
     &__list {
         position: relative;
+        padding-left: toRem(30);
         &::after{
             content:'';
             position: absolute;
@@ -278,12 +316,13 @@
             height: 100%;
             background-color: $greenDark;
             top: 0;
-            left: toRem(-45);
+            left: 0;
         }
     }
 
     &__item {
         position: relative;
+        padding-left: toRem(30);
         &:not(:last-child) {
             margin-bottom: toRem(20);
         }
@@ -294,16 +333,21 @@
             height: toRem(15);
             background-color: #d9d9d9;
             border-radius: 100%;
-            top: toRem(23);
-            left: toRem(-27);
+            @include adaptiveValue("top", 20, 15);
+            left: toRem(0);
             z-index: 2;
         }
     }
 
     &__link {
         font-size: toRem(55);
-        @include adaptiveValue("font-size", 55, 30);
-        transition: all 0.3s;
+        @media (max-width:$tablet){
+            font-size: toRem(45);
+        }
+        @media (max-width:$mobile){
+             font-size: toRem(40); 
+        }
+        transition: scale 0.3s;
         @media (any-hover: hover){
             &:hover{
                 text-decoration: underline;
@@ -320,12 +364,16 @@
 
     &__form {
         min-width: percent(393,720);
-        @include adaptiveValue("min-width", 393, 300, 0, 1170, 767.8);
+        @include adaptiveValue("min-width", 393, 300, 1, 1170, 767.98);
         display: flex;
         flex-direction: column;
         gap: toRem(4);
         position: relative;
         margin-bottom: toRem(20);
+
+        @media (max-width: toEm(600)){
+             min-width: toRem(300); 
+        }
     }
 
     &__input {

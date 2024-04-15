@@ -80,23 +80,7 @@ function clearSkillsContainer() {
 
 // Add event listener for the resize event
 window.addEventListener('resize', handleResize);
-// document.addEventListener('watcherCallback', (e)=>{
-//   const entry = e.detail.entry;
-// 	// Спостерігаємий об'єкт
-// 	const targetElement = entry.target;
-//   if (targetElement.classList.contains('active-section')) {
-//     const menuBody = document.querySelector('.menu__body');
-//     menuBody.className = 'menu__body';
-    
-//     // Check if the target element has class 'hero'
-//     if (targetElement.classList.contains('hero')) {
-//       // Add the class 'toBottom' to the element with class 'menu__body'
-//       menuBody.classList.add('toBottom');
-//     } else if (targetElement.classList.contains('me')) {
-//       menuBody.classList.add('toCenter');
-//     }
-//   }
-// })
+
 handleResize();
 
 
