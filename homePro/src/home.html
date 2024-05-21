@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="hero">
+					<div class="hero__image">
+						<img class="ibg ibg--top" src="@img/hero/worker-left.jpg" alt="Image">
+					</div>
+					<div class="hero__body">
+						<div class="hero__main-block main-block">
+							<div class="main-block__content">
+								<div class="main-block__services services--main-block">
+									<div class="services--main-block__item">Maintenances</div>
+									<div class="services--main-block__item">Repairs</div>
+									<div class="services--main-block__item">Improvements</div>
+								</div>
+								<div class="main-block__title">Need improvement or repair your home? we can help!</div>
+								<div class="main-block__pluses pluses--main-block">
+									<div class="pluses--main-block__item">Free Quotes</div>
+									<div class="pluses--main-block__item">100% Commitment-Free</div>
+								</div>
+							</div>
+							<button class="main-block__button button">
+								<span>Call Us Now</span>
+							</button>
+						</div>
+						<div class="hero__advantages advantages--hero">
+							<div class="advantages--hero__item">
+								<div class="advantages--hero__icon">
+									<img src="@img/hero/advantages/guarantee.svg" alt="Icon">
+								</div>
+								<div class="advantages--hero__text">Satisfaction<br> Guarantee</div>
+							</div>
+							<div class="advantages--hero__item">
+								<div class="advantages--hero__icon">
+									<img src="@img/hero/advantages/clock.svg" alt="Icon">
+								</div>
+								<div class="advantages--hero__text">24H<br> Availability</div>
+							</div>
+							<div class="advantages--hero__item">
+								<div class="advantages--hero__icon">
+									<img src="@img/hero/advantages/map.svg" alt="Icon">
+								</div>
+								<div class="advantages--hero__text">Local US<br> Professional</div>
+							</div>
+							<div class="advantages--hero__item">
+								<div class="advantages--hero__icon">
+									<img src="@img/hero/advantages/calendar.svg" alt="Icon">
+								</div>
+								<div class="advantages--hero__text">Flexible<br> Appointments</div>
+							</div>
+						</div>
+					</div>
+					<div class="hero__image">
+						<img class="ibg ibg--top" src="@img/hero/worker-right.jpg" alt="Image">
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

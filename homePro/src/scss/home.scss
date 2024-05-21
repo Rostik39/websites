@@ -1,0 +1,104 @@
+//====================================================================================================
+.hero {
+    background-color: $darkBlue;
+    padding: toRem(100) toRem(16) toRem(61) toRem(16);
+    display: grid;
+    grid-template-columns: 21% 1fr 21%;
+    align-items: center;
+    justify-items: center;
+    gap: toRem(15);
+    min-height: 100vh;
+    position: relative;
+    @media (max-width:$tablet){
+        grid-template-columns: 1fr;
+
+    }
+
+    &::before, &::after{
+        content:'';
+        background: url("@img/hero/Decoration.svg") no-repeat;
+        position: absolute;
+        width: toRem(480);
+        height: toRem(45);
+        bottom: 0;
+    }
+    &::before{
+        content:'';
+        @include adaptiveValue("left", 0, -400);
+    }
+    &::after{
+        content:'';
+        transform: rotateY(180deg);
+        @include adaptiveValue("right", 0, -400);
+    }
+
+    &__image {
+        border-radius: toRem(24);
+        overflow: hidden;
+        height: toRem(836);
+        @media (max-width:$tablet){
+            display: none;
+        }
+    }
+
+    &__image img {
+        aspect-ratio: 412 / 836;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include adaptiveValue("gap", 152, 60, 0, $containerWidth, 991.98);
+    }
+
+    &__main-block {
+    }
+
+    &__advantages {
+    }
+}
+.advantages--hero {
+    display: flex;
+    gap: toRem(64);
+    flex-wrap: wrap;
+    // align-items: center;
+    justify-content: center;
+    &__item {
+        display: flex;
+        gap: toRem(16);
+        position: relative;
+        &:not(:last-child) {
+            &::after{
+                content:'';
+                background: rgb(20,34,87);
+                background: linear-gradient(180deg, rgba(20,34,87,0) 0%, rgba(79,102,183,1) 50%, rgba(20,34,87,0) 100%);
+                position: absolute;
+                width: toRem(2);
+                height: 100%;
+                top: 0;
+                right: toRem(-32);
+            }
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 toRem(48);
+        background-color: #1f3584;
+        border-radius: 100%;
+        height: toRem(48);
+        width: toRem(48);
+    }
+
+    &__text {
+        color: #fff;
+        font-weight: 600;
+        line-height: 1.33;
+    }
+}
+
+//====================================================================================================

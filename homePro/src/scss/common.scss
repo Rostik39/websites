@@ -1,0 +1,172 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.title-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(24);
+    align-items: center;
+
+    &__title {
+        font-weight: 700;
+        font-size: toRem(52);
+        line-height: 1.23;
+        color: #000;
+
+        &--white {
+            color: #fff;
+        }
+    }
+
+    &__text {
+        line-height: 1.56;
+    }
+
+    &--left {
+        align-items: start;
+    }
+
+    &--inline {
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: toRem(20);
+
+        & .title-block__title {
+            flex: 0 1 toRem(600);
+        }
+
+        & .title-block__text {
+            flex: 0 1 toRem(613);
+            align-self: end;
+        }
+    }
+}
+
+/*
+<div class="__title-block title-block">
+    <div class="title-block__title"></div>
+    <div class="title-block__text">
+        <p></p>
+    </div>
+</div>
+*/
+//========================================================================================================================================================
+.main-block {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(48);
+    align-items: center;
+    justify-content: center;
+    @media (min-width:$tablet){
+        max-width: toRem(673);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(24);
+        align-items: center;
+    }
+
+    &__services {
+    }
+
+    &__title {
+        font-weight: 800;
+        line-height: 1.19;
+        text-align: center;
+        color: #fff;
+        @include adaptiveValue("font-size", 64, 40);
+    }
+
+    &__pluses {
+    }
+
+    &__button {
+    }
+}
+.services--main-block {
+    display: flex;
+    gap: toRem(52);
+    justify-content: center;
+    &__item {
+        font-weight: 700;
+        font-size: toRem(20);
+        line-height: 1.4;
+        color: #9ea3b5;
+        position: relative;
+        &:not(:last-child) {
+            &::after{
+                content:'';
+                position: absolute;
+                width: toRem(5);
+                height: toRem(5);
+                top: 50%;
+                right: toRem(-25);
+                border-radius: 50%;
+                background-color: #9ea3b5;
+            }
+        }
+    }
+}
+.pluses--main-block {
+    display: flex;
+    gap: toRem(41);
+    justify-content: center;
+    &__item {
+        font-size: toRem(20);
+        line-height: 1.60;
+        color: $skyBlue;
+        padding-left: toRem(32);
+        background: url("@img/icons/check.svg") left no-repeat;
+    }
+}
+/*
+<div class="main-block">
+    <div class="main-block__content">
+        <div class="main-block__services services--main-block">
+            <div class="services--main-block__item">Maintenances</div>
+            <div class="services--main-block__item">Repairs</div>
+            <div class="services--main-block__item">Improvements</div>
+        </div>
+        <div class="main-block__title">Need improvement or repair your home? we can help!</div>
+        <div class="main-block__pluses pluses--main-block">
+            <div class="pluses--main-block__item">Free Quotes</div>
+            <div class="pluses--main-block__item">100% Commitment-Free</div>
+        </div>
+    </div>
+    <button class="main-block__button button">
+        <span>Call Us Now</span>
+    </button>
+</div>
+*/
+//========================================================================================================================================================
+.button {
+    background-color: $skyBlue;
+    border-radius: toRem(60);
+    font-weight: 700;
+    font-size: toRem(24);
+    line-height: 1.33;
+    color: #fff;
+    min-height: toRem(64);
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: toRem(16);
+        padding-left: toRem(16);
+        padding-right: toRem(8);
+        &::after{
+            content:'';
+            width: toRem(48);
+            height: toRem(48);
+            flex: 0 0 toRem(48);
+            border-radius: 50%;
+            background: #fff url("@img/icons/call.svg") center no-repeat;
+        }
+    }
+
+    &--white {
+        background-color: #fff;
+        color: $skyBlue;
+        width: 100%;
+    }
+}

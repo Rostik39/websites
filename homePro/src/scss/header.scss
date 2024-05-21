@@ -1,0 +1,106 @@
+.header {
+    background-color: $darkBlue;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    &__container {
+        display: grid;
+        grid-template-columns: toRem(175) 1fr toRem(175);
+        min-height: toRem(80);
+        align-items: center;
+        gap: toRem(20);
+        color: #fff;
+        @media (max-width:$mobile){
+            grid-template-columns: repeat(2, 1fr);
+            min-height: toRem(60);
+        }
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__menu {
+        @media (max-width:$mobile){
+            justify-self: end;
+        }
+    }
+
+    &__schedule {
+        justify-self: end;
+        font-weight: 700;
+        line-height: 1.33;
+        // display: flex;
+        // gap: toRem(10);
+        // align-items: center;
+        // justify-content: center;
+        &::before{
+            content:'';
+            width: toRem(12);
+            height: toRem(12);
+            background-color: #ff5e5e;
+            border-radius: 50%;
+            margin-right: toRem(10);
+            animation: blink infinite 2s alternate;
+        }
+    }
+}
+@keyframes blink {
+    0%{
+        background-color: #ff5e5e;
+    }
+    100%{
+        background-color: #fa0000;
+    }
+}
+.menu {
+
+    &__icon {
+    }
+
+    &__body {
+        @media (max-width:$mobile){
+            display: flex;
+            flex-direction: column; 
+            background: rgb(21,178,245);
+            background: linear-gradient(329deg, rgba(21,178,245,1) 0%, rgba(255,255,255,1) 100%);
+            align-items: end;
+            row-gap: toRem(40);
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: toRem(57);
+        @include adaptiveValue("column-gap", 57, 13, 0, $containerWidth, 768);
+        row-gap: toRem(5);
+        flex-wrap: wrap;
+        @media (max-width:$mobile){
+             flex: 1 0 auto; 
+             flex-direction: column;
+             row-gap:toRem(35);
+             align-items: start;
+        }
+    }
+
+    &__item {
+    }
+
+    &__link {
+        font-weight: 700;
+        line-height: 1.33;
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        @media (max-width:$mobile){
+             font-size: toRem(30); 
+        }
+    }
+}
+.icon-menu {
+}
