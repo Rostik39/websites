@@ -14,7 +14,10 @@ const texts = [
     "Figma",
     "Animations",
     "npm",
-    "Responsive",
+    "Responsiveness",
+    "React",
+    "Webpack",
+    "Gulp",
 ];
 const options = {
     containerClass: "tag-cloud",

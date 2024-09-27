@@ -1051,7 +1051,7 @@
         }), 0);
         var TagCloud = __webpack_require__(124);
         const container = ".skills__container";
-        const texts = [ "HTML", "CSS", "SCSS", "JavaScript", "Figma", "Animations", "npm", "Responsive" ];
+        const texts = [ "HTML", "CSS", "SCSS", "JavaScript", "Figma", "Animations", "npm", "Responsiveness", "React", "Webpack", "Gulp" ];
         const options = {
             containerClass: "tag-cloud",
             itemClass: "tag",
