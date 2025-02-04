@@ -1,0 +1,92 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        min-height: toRem(151);
+        padding-top: toRem(10);
+        padding-bottom: toRem(10);
+
+        @media (min-width:$mobile) {
+            justify-content: space-between;
+            gap: toRem(10);
+        }
+
+        @media (max-width:$tablet) {
+            min-height: toRem(120);
+        }
+    }
+
+    &__logo {
+        z-index: 2;
+        @media (max-width:$mobile){
+             margin: 0 auto 0 0; 
+        }
+        img {
+            @media (max-width:$tablet) {
+                width: toRem(133);
+            }
+        }
+    }
+
+    &__action {}
+}
+
+.action--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    @include adaptiveValue("gap", 45, 10);
+
+    &__link {
+        color: $bgGold;
+    }
+
+    &__button {}
+}
+
+.menu {
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        @include adaptiveValue("gap", 45, 10);
+
+        @media (max-width:$mobile) {
+            justify-content: center;
+            flex-direction: column;
+            flex: 1 1 auto;
+        }
+    }
+
+    &__item {}
+
+    &__link {
+        font-weight: 300;
+        line-height: 156%;
+        color: $bgGold;
+        transition: all 0.3s;
+
+        @media (max-width:$mobile) {
+            font-size: toRem(40);
+            font-weight: 600;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                scale: 1.08;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__icon {}
+}
